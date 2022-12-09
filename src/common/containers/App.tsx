@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import { DarkModeContextProvider } from "./darkMode";
 
-export default function App({ children }) {
-  return children;
+export default function App({ children }: { children: React.ReactNode }) {
+  return <DarkModeContextProvider>{children}</DarkModeContextProvider>;
 }

@@ -1,5 +1,19 @@
-import Home from './App';
+import React from "react";
+import { FC } from "react";
+import Home from "./App";
 
-// Use something like react-router-dom to manage multiple pages/routes
+type Page = "Home" | string; // 可以跳出提示字元
 
-export default Home;
+type Props = {
+  page: Page;
+};
+
+const Routes: FC<Props> = ({ page }) => {
+  if (page === "Home") {
+    return <Home />;
+  }
+
+  return <>{"Error404"}</>;
+};
+
+export default Routes;
